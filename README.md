@@ -26,7 +26,7 @@ https://cdn.jsdelivr.net/gh/pxa264/cdn-images@main/<path>
 https://cdn.jsdelivr.net/gh/pxa264/cdn-images@main/avatars/default.jpg
 https://cdn.jsdelivr.net/gh/pxa264/cdn-images@main/banners/home-banner-1.jpg
 https://cdn.jsdelivr.net/gh/pxa264/cdn-images@main/categories/electronics.jpg
-https://cdn.jsdelivr.net/gh/pxa264/cdn-images@main/products/1/main.jpg
+https://cdn.jsdelivr.net/gh/pxa264/cdn-images@main/products/20260213-113149-bb0f1d.jpg
 ```
 
 ## 各目录说明
@@ -34,30 +34,33 @@ https://cdn.jsdelivr.net/gh/pxa264/cdn-images@main/products/1/main.jpg
 - `avatars/`: 用户头像资源，详见 `avatars/README.md`
 - `banners/`: 首页轮播 Banner，详见 `banners/README.md`
 - `categories/`: 商品分类图片，详见 `categories/README.md`
-- `products/`: 商品主图、缩略图和轮播图，详见 `products/README.md`
+- `products/`: 商品图片上传目录，详见 `products/README.md`
 
-## 商品图片约定
+## 商品图片说明
 
-推荐以商品 ID 作为一级目录，常用结构如下：
+当前 AI Mall 后台上传服务会将商品图片直接写入 `products/` 根目录，并自动生成唯一文件名。
 
-```text
-products/
-└── 1/
-    ├── main.jpg
-    ├── thumb.jpg
-    └── carousel/
-        ├── 1.jpg
-        ├── 2.jpg
-        └── 3.jpg
-```
-
-对应访问地址：
+当前命名格式：
 
 ```text
-https://cdn.jsdelivr.net/gh/pxa264/cdn-images@main/products/1/main.jpg
-https://cdn.jsdelivr.net/gh/pxa264/cdn-images@main/products/1/thumb.jpg
-https://cdn.jsdelivr.net/gh/pxa264/cdn-images@main/products/1/carousel/1.jpg
+YYYYMMDD-HHmmss-随机6位.扩展名
 ```
+
+示例：
+
+```text
+products/20260213-113149-bb0f1d.jpg
+products/20260211-102828-7d4cb2.webp
+```
+
+对应 CDN 地址：
+
+```text
+https://cdn.jsdelivr.net/gh/pxa264/cdn-images@main/products/20260213-113149-bb0f1d.jpg
+https://cdn.jsdelivr.net/gh/pxa264/cdn-images@main/products/20260211-102828-7d4cb2.webp
+```
+
+如果业务后续需要按商品 ID、用途或轮播图层级做更细的目录设计，应以应用代码实际实现为准；当前仓库以“扁平商品图片目录 + 唯一文件名”作为事实标准。
 
 ## 使用建议
 
